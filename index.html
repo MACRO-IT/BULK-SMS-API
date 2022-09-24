@@ -6,6 +6,7 @@
  !-->
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>API - Documentation</title>
@@ -20,242 +21,787 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" media="all">
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
-<div class="left-menu">
-    <div class="content-logo">
-        <div class="logo">
-            <img alt="platform by Emily van den Heever from the Noun Project" title="platform by Emily van den Heever from the Noun Project" src="images/logo.png" height="32" />
-            <span>API Documentation</span>
+    <div class="left-menu">
+        <div class="content-logo">
+            <div class="logo">
+                <img alt="platform by Emily van den Heever from the Noun Project"
+                    title="platform by Emily van den Heever from the Noun Project" src="images/logo.png" height="32" />
+                <span>API Documentation</span>
+            </div>
+            <button class="burger-menu-icon" id="button-menu-mobile">
+                <svg width="34" height="34" viewBox="0 0 100 100">
+                    <path class="line line1"
+                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
+                    </path>
+                    <path class="line line2" d="M 20,50 H 80"></path>
+                    <path class="line line3"
+                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
+                    </path>
+                </svg>
+            </button>
         </div>
-        <button class="burger-menu-icon" id="button-menu-mobile">
-            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
-        </button>
-    </div>
-    <div class="mobile-menu-closer"></div>
-    <div class="content-menu">
-        <div class="content-infos">
-            <div class="info"><b>Version:</b> 1.0.5</div>
-            <div class="info"><b>Last Updated:</b> 15th Sep, 2021</div>
+        <div class="mobile-menu-closer"></div>
+        <div class="content-menu">
+            <div class="content-infos">
+                <div class="info"><b>Version:</b> 1.0.0</div>
+                <div class="info"><b>Last Updated:</b> 24 Sep, 2022</div>
+            </div>
+            <ul>
+                <li class="scroll-to-link active" data-target="content-get-started">
+                    <a>GET STARTED</a>
+                </li>
+                <li class="scroll-to-link" data-target="cURL">
+                    <a>cURL</a>
+                </li>
+                <li class="scroll-to-link" data-target="C-SHARP">
+                    <a>C-Sharp</a>
+                </li>
+                <li class="scroll-to-link" data-target="JAVA">
+                    <a>Java</a>
+                </li>
+                <li class="scroll-to-link" data-target="JAVASCRIPT">
+                    <a>JavaScript</a>
+                </li>
+                <li class="scroll-to-link" data-target="OBJECTIVE-C">
+                    <a>objective C</a>
+                </li>
+                <li class="scroll-to-link" data-target="PHP">
+                    <a>PHP</a>
+                </li>
+                <li class="scroll-to-link" data-target="PYTHON">
+                    <a>Python</a>
+                </li>
+                <li class="scroll-to-link" data-target="RUBY">
+                    <a>Ruby</a>
+                </li>
+                <li class="scroll-to-link" data-target="SUCCESS">
+                    <a>Success</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-errors">
+                    <a>Errors</a>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li class="scroll-to-link active" data-target="content-get-started">
-                <a>GET STARTED</a>
-            </li>
-            <li class="scroll-to-link" data-target="content-get-characters">
-                <a>Get Characters</a>
-            </li>
-            <li class="scroll-to-link" data-target="content-errors">
-                <a>Errors</a>
-            </li>
-        </ul>
     </div>
-</div>
-<div class="content-page">
-    <div class="content-code"></div>
-    <div class="content">
-        <div class="overflow-hidden content-section" id="content-get-started">
-            <h1>Get started</h1>
-            <pre>
+    <div class="content-page">
+        <div class="content-code"></div>
+        <div class="content">
+            <div class="overflow-hidden content-section" id="content-get-started">
+                <h1>Get started</h1>
+                <pre>
     API Endpoint
 
-        https://api.westeros.com/
+        https://kwachacredit.com/api/api_testing
                 </pre>
-            <p>
-                The Westeros API provides programmatic access to read Game of Thrones data. Retrieve a character, provide an oauth connexion, retrieve a familly, filter them, etc.
-            </p>
-            <p>
-                To use this API, you need an <strong>API key</strong>. Please contact us at <a href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
-            </p>
-        </div>
-        <div class="overflow-hidden content-section" id="content-get-characters">
-            <h2>get characters</h2>
-            <pre><code class="bash">
-# Here is a curl example
-curl \
--X POST http://api.westeros.com/character/get \
--F 'secret_key=your_api_key' \
--F 'house=Stark,Bolton' \
--F 'offset=0' \
--F 'limit=50'
-                </code></pre>
-            <p>
-                To get characters you need to make a POST call to the following url :<br>
-                <code class="higlighted break-word">http://api.westeros.com/character/get</code>
-            </p>
-            <br>
-            <pre><code class="json">
-Result example :
+                <p>
+                    The kwachacredit API provides programmatic for payments collections from customers. With our APIs,
+                    you can make and receive payments in real world from your clients online. You don't know how to work
+                    with API's? Don't worry we have composed our API's into beautiful HTML standard code in various
+                    languages which you can easily copy and paste in your code and start collecting payments.
+                </p>
+                <p>
+                    To use this in real world, you need a <strong>Bearer Token</strong>. Please create an account with
+                    us and make your token in the developers dashboard.
+                </p>
+            </div>
 
-{
-  query:{
-    offset: 0,
-    limit: 50,
-    house: [
-      "Stark",
-      "Bolton"
-    ],
-  }
-  result: [
-    {
-      id: 1,
-      first_name: "Jon",
-      last_name: "Snow",
-      alive: true,
-      house: "Stark",
-      gender: "m",
-      age: 14,
-      location: "Winterfell"
-    },
-    {
-      id: 2,
-      first_name: "Eddard",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "m",
-      age: 35,
-      location: 'Winterfell'
-    },
-    {
-      id: 3,
-      first_name: "Catelyn",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "f",
-      age: 33,
-      location: "Winterfell"
-    },
-    {
-      id: 4,
-      first_name: "Roose",
-      last_name: "Bolton",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 40,
-      location: "Dreadfort"
-    },
-    {
-      id: 5,
-      first_name: "Ramsay",
-      last_name: "Snow",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 15,
-      location: "Dreadfort"
-    },
-  ]
-}
+
+
+
+            <!--cURL PHP API-->
+            <div class="overflow-hidden content-section" id="cURL">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a curl example
+curl --location --request GET 'https://kwachacredit.com/api/api_testing' \
+--header 'Content-Type: application/json' 
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer ......' \
+--data-raw '{
+  "amount": "....",
+  "currency": "EUR",
+  "externalId": ".....",
+  "payer": {
+    "partyIdType": "MSISDN",
+    "partyId": "......."
+  },
+  "payerMessage": "Paying For Chickens",
+  "payeeNote": "Payment Successfull"
+}'
+               
+
+
                 </code></pre>
-            <h4>QUERY PARAMETERS</h4>
-            <table class="central-overflow-x">
-                <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>secret_key</td>
-                    <td>String</td>
-                    <td>Your API key.</td>
-                </tr>
-                <tr>
-                    <td>search</td>
-                    <td>String</td>
-                    <td>(optional) A search word to find character by name.</td>
-                </tr>
-                <tr>
-                    <td>house</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string array of houses:
-                    </td>
-                </tr>
-                <tr>
-                    <td>alive</td>
-                    <td>Boolean</td>
-                    <td>
-                        (optional) a boolean to filter alived characters
-                    </td>
-                </tr>
-                <tr>
-                    <td>gender</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string to filter character by gender:<br>
-                        m: male<br>
-                        f: female
-                    </td>
-                </tr>
-                <tr>
-                    <td>offset</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the specified offset.</td>
-                </tr>
-                <tr>
-                    <td>limit</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and 100.</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="overflow-hidden content-section" id="content-errors">
-            <h2>Errors</h2>
-            <p>
-                The Westeros API uses the following error codes:
-            </p>
-            <table>
-                <thead>
-                <tr>
-                    <th>Error Code</th>
-                    <th>Meaning</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>X000</td>
-                    <td>
-                        Some parameters are missing. This error appears when you don't pass every mandatory parameters.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X001</td>
-                    <td>
-                        Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you use an unknow API key or if your API key expired.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X002</td>
-                    <td>
-                        Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears if you use an  API key non specified for your domain. Developper or Universal API keys doesn't have domain checker.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X003</td>
-                    <td>
-                        Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you use an unknow user <code class="higlighted">token</code> or if the user <code class="higlighted">token</code> expired.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="content-code"></div>
+
+
+             
+
+
+
+
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                            <td>POST</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+            <!--cURL PHP API-->
+
+
+            <!--C-SHARP API-->
+
+            <div class="overflow-hidden content-section" id="C-SHARP">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a c-sharp-restC# example
+var client = new RestClient("https://kwachacredit.com/api/api_testing");
+client.Timeout = -1;
+var request = new RestRequest(Method.GET);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Accept", "application/json");
+request.AddHeader("Authorization", "Bearer ............");
+var body = @"{
+" + "\n" +
+@"  ""amount"": ""....."",
+" + "\n" +
+@"  ""currency"": ""EUR"",
+" + "\n" +
+@"  ""externalId"": ""......."",
+" + "\n" +
+@"  ""payer"": {
+" + "\n" +
+@"    ""partyIdType"": ""MSISDN"",
+" + "\n" +
+@"    ""partyId"": "".......""
+" + "\n" +
+@"  },
+" + "\n" +
+@"  ""payerMessage"": ""Paying For Chickens"",
+" + "\n" +
+@"  ""payeeNote"": ""Payment Successfull""
+" + "\n" +
+@"}";
+request.AddParameter("application/json", body,  ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
+            </code></pre>
+
+
+
+
+
+
+          
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--END C-SHARP API-->
+
+
+
+            <!--JAVA API-->
+
+            <div class="overflow-hidden content-section" id="JAVA">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a JAVA example
+
+OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\r\n  \"amount\": \"300\",\r\n  \"currency\": \"EUR\",\r\n  \"externalId\": \"279182\",\r\n  \"payer\": {\r\n    \"partyIdType\": \"MSISDN\",\r\n    \"partyId\": \"9612572923\"\r\n  },\r\n  \"payerMessage\": \"Paying For Chickens\",\r\n  \"payeeNote\": \"Payment Successfull\"\r\n}");
+Request request = new Request.Builder()
+  .url("https://kwachacredit.com/api/api_testing")
+  .method("GET", body)
+  .addHeader("Content-Type", "application/json")
+  .addHeader("Accept", "application/json")
+  .addHeader("Authorization", "Bearer ........")
+  .build();
+Response response = client.newCall(request).execute();
+        </code></pre>
+
+
+
+
+
+
+
+
+             
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--END JAVA API-->
+
+
+
+
+
+            <!--JAVASCRIPT API-->
+
+            <div class="overflow-hidden content-section" id="JAVASCRIPT">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a Js example
+// WARNING: For GET requests, body is set to null by browsers.
+var data = JSON.stringify({
+  "amount": "300",
+  "currency": "EUR",
+  "externalId": "279182",
+  "payer": {
+    "partyIdType": "MSISDN",
+    "partyId": "9612572923"
+  },
+  "payerMessage": "Paying For Chickens",
+  "payeeNote": "Payment Successfull"
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://kwachacredit.com/api/api_testing");
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Authorization", "Bearer ......");
+
+xhr.send(data);
+            </code></pre>
+
+
+
+
+
+
+
+
+             
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--JAVASCRIPT-->
+
+
+
+
+            <!--OBJECTIVE C-->
+
+            <div class="overflow-hidden content-section" id="OBJECTIVE-C">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is the OBJECTIVE-C Example
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://kwachacredit.com/api/api_testing"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Content-Type": @"application/json",
+  @"Accept": @"application/json",
+  @"Authorization": @"Bearer ......"
+};
+
+[request setAllHTTPHeaderFields:headers];
+NSData *postData = [[NSData alloc] initWithData:[@"{\r\n  \"amount\": \"300\",\r\n  \"currency\": \"EUR\",\r\n  \"externalId\": \"279182\",\r\n  \"payer\": {\r\n    \"partyIdType\": \"MSISDN\",\r\n    \"partyId\": \"9612572923\"\r\n  },\r\n  \"payerMessage\": \"Paying For Chickens\",\r\n  \"payeeNote\": \"Payment Successfull\"\r\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"GET"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+    dispatch_semaphore_signal(sema);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+            </code></pre>
+
+
+
+
+
+
+
+
+              TERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--OBJECTIVE-C-->
+
+
+
+            <!--PHP API-->
+
+            <div class="overflow-hidden content-section" id="PHP">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a PHP example
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://kwachacredit.com/api/api_testing',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_POSTFIELDS =>'{
+  "amount": "300",
+  "currency": "EUR",
+  "externalId": "279182",
+  "payer": {
+    "partyIdType": "MSISDN",
+    "partyId": "9612572923"
+  },
+  "payerMessage": "Paying For Chickens",
+  "payeeNote": "Payment Successfull"
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'Accept: application/json',
+    'Authorization: Bearer ......'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+            </code></pre>
+
+
+
+
+
+
+
+
+              
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--PHP API-->
+
+
+
+
+
+            <!--PYTHON API-->
+
+            <div class="overflow-hidden content-section" id="PYTHON">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a PYTHON example
+import http.client
+import json
+
+conn = http.client.HTTPSConnection("localhost")
+payload = json.dumps({
+  "amount": "300",
+  "currency": "EUR",
+  "externalId": "279182",
+  "payer": {
+    "partyIdType": "MSISDN",
+    "partyId": "9612572923"
+  },
+  "payerMessage": "Paying For Chickens",
+  "payeeNote": "Payment Successfull"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer ......'
+}
+conn.request("GET", "/MACROIT/PROJECT1/Hackathon/public/api/testing_api", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
+        <pre><code class="json">
+
+
+
+
+            </code></pre>
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--PYTHON API-->
+
+
+
+            <!--RUBY API-->
+
+            <div class="overflow-hidden content-section" id="RUBY">
+                <h2>get characters</h2>
+                <pre><code class="bash">
+# Here is a RUBY example
+require "uri"
+require "json"
+require "net/http"
+
+url = URI("https://kwachacredit.com/api/api_testing")
+
+http = Net::HTTP.new(url.host, url.port);
+request = Net::HTTP::Get.new(url)
+request["Content-Type"] = "application/json"
+request["Accept"] = "application/json"
+request["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NzU3MjE3NC1hNjkzLTRkNTItODdjZC0wMzNkMzA2M2UwYWQiLCJqdGkiOiIwOWJjMzhmZmZiMjRkMTIyYWZjMzY5MmRjNjMyZmJiZjgwZTdhMTYxMDJjNmIzZDFhZmQ5NTVmNjVkMTQyNWNlMmVhYjdkOWRhMDQ5OTgzZSIsImlhdCI6MTY2NDAwNTgzNS41NDE1MDUsIm5iZiI6MTY2NDAwNTgzNS41NDE1MjYsImV4cCI6MTY5NTU0MTgzNC45NjMwNjMsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.oqrzwCeUGnubkOx--gJMjsMMcluYmO59zCc8vF52JBJD7lVgzEBZdrzHBsDI2inDSnzpSiXUiN7EUg80Cmw8rgQLYBLOT_9FWkc8T6On2XzZ7-TbRiMvyySR2GlXGuCowAnbb-FiJBQRdk1nVrHmDuZMJDLEbOdOfHxJfzbP1pCS3AopJsBff28epXMBmBT2SfYjMIf12i85recDE2isW_CGKzoI8HHQDEnnHlynKqHf2ahwGqNlIij6LVs5ulyAiT477G9871Te3o4Rm8tNpcTZz-xJ5TWdNOBJs_ItTY8fcxQom97zUPbRAevTaylyvPkR0dTIcbxlTsyoKrey14sCHs0E_PDly5yk5qL9AtTt1NDX7TPtT4nXXGbSz7t8GIZueHKUvq_BGa1IuiPze9a6aDLenhhgnQeciwq-8ltClBskC-PE2KcYAewXmO4fbR_mUqjSinNDnobqRHhVnEfnIx3CHnWD28DA1IuE1AJa_M7FK81d3-XYIr99e6Bv5W4gV-1-xvq2RntohPDWWUeZVW7-pPMlxmEFTSRa06nEXZ_pnL3MJCHUohB858b-CEpyFdERS5ivIFzZq659y6cnf7_Wxlw3eVAumfRORyzZfX5ISrP8BuxXnxjNZzIaP6fSAxtRsZfigYofSWTOhhbQVAsGFP2CITE8wKr66C4"
+request.body = JSON.dump({
+  "amount": "300",
+  "currency": "EUR",
+  "externalId": "279182",
+  "payer": {
+    "partyIdType": "MSISDN",
+    "partyId": "9612572923"
+  },
+  "payerMessage": "Paying For Chickens",
+  "payeeNote": "Payment Successfull"
+})
+
+response = http.request(request)
+puts response.read_body
+
+    <pre><code class="json">
+
+
+
+
+        </code></pre>
+                <h4>QUERY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>String</td>
+                            <td>Your Bearer token.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
+            <!--RUBY API-->
+
+
+<!-- Success Codes -->
+<div class="overflow-hidden content-section" id="SUCCESS">
+    <h2>Success</h2>
+    <p>
+        The kwachacredit API uses the following success status codes:
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Status Code</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>200</td>
+                <td>
+                    Ok. Request send successfully
+                </td>
+            </tr>
+            <tr>
+                <td>202</td>
+                <td>
+                    Accepted. Request Accepted successfully 
+                </td>
+            </tr>
+           
+
+        </tbody>
+    </table>
 </div>
-<!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
-<a href="https://github.com/ticlekiwi/API-Documentation-HTML-Template" class="github-corner" aria-label="View source on Github" title="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}@media only screen and (max-width:680px){ .github-corner > svg { right: auto!important; left: 0!important; transform: rotate(270deg)!important;}}</style>
-<!-- END Github Corner Ribbon - to remove -->
-<script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+            <!--Get Errors-->
+            <div class="overflow-hidden content-section" id="content-errors">
+                <h2>Errors</h2>
+                <p>
+                    The kwachacredit API uses the following error codes:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Error Code</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>400</td>
+                            <td>
+                                Bad Request
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>404</td>
+                            <td>
+                                Not Found
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>
+                                INTERNAL_PROCESSING_ERROR
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="content-code"></div>
+    </div>
+    <!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
+    <a href="https://github.com/ticlekiwi/API-Documentation-HTML-Template" class="github-corner"
+        aria-label="View source on Github" title="View source on Github"><svg width="80" height="80"
+            viewBox="0 0 250 250"
+            style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+
+        @media only screen and (max-width:680px) {
+            .github-corner>svg {
+                right: auto !important;
+                left: 0 !important;
+                transform: rotate(270deg) !important;
+            }
+        }
+    </style>
+    <!-- END Github Corner Ribbon - to remove -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
