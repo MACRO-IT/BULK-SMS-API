@@ -97,9 +97,22 @@
             <div class="overflow-hidden content-section" id="content-get-started">
                 <h1>Get started</h1>
                 <pre>
-    API Endpoint
+    API Endpoint:
 
         https://kwachacredit.com/api/api_testing
+
+        Body Format: Raw
+        {
+            "amount": "....",
+            "currency": "EUR",
+            "externalId": ".....",
+            "payer": {
+              "partyIdType": "MSISDN",
+              "partyId": "......."
+            },
+            "payerMessage": "Paying For Chickens",
+            "payeeNote": "Payment Successfull"
+          }
                 </pre>
                 <p>
                     The kwachacredit API provides programmatic for payments collections from customers. With our APIs,
@@ -158,15 +171,33 @@ curl --location --request GET 'https://kwachacredit.com/api/api_testing' \
                         </tr>
                     </thead>
                     <tbody>
+                       
                         <tr>
                             <td>Authorization</td>
                             <td>String</td>
                             <td>Your Bearer token.</td>
                             <td>POST</td>
                         </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
 
                     </tbody>
                 </table>
+
+
+
+               
+
 
 
             </div>
@@ -232,6 +263,18 @@ Console.WriteLine(response.Content);
                             <td>String</td>
                             <td>Your Bearer token.</td>
                         </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
 
                     </tbody>
                 </table>
@@ -288,6 +331,18 @@ Response response = client.newCall(request).execute();
                             <td>Authorization</td>
                             <td>String</td>
                             <td>Your Bearer token.</td>
+                        </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -362,6 +417,18 @@ xhr.send(data);
                             <td>Authorization</td>
                             <td>String</td>
                             <td>Your Bearer token.</td>
+                        </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -441,6 +508,18 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
                             <td>Authorization</td>
                             <td>String</td>
                             <td>Your Bearer token.</td>
+                        </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -522,6 +601,18 @@ echo $response;
                             <td>String</td>
                             <td>Your Bearer token.</td>
                         </tr>
+                        <tr>
+                            <td>Content-Type</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>String</td>
+                            <td>application/json</td>
+                            <td></td>
+                        </tr>
 
                     </tbody>
                 </table>
@@ -567,30 +658,40 @@ conn.request("GET", "/MACROIT/PROJECT1/Hackathon/public/api/testing_api", payloa
 res = conn.getresponse()
 data = res.read()
 print(data.decode("utf-8"))
-        <pre><code class="json">
-
-
+      
 
 
             </code></pre>
-                <h4>QUERY PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Authorization</td>
-                            <td>String</td>
-                            <td>Your Bearer token.</td>
-                        </tr>
+            <h4>QUERY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your Bearer token.</td>
+                    </tr>
+                    <tr>
+                        <td>Content-Type</td>
+                        <td>String</td>
+                        <td>application/json</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Accept</td>
+                        <td>String</td>
+                        <td>application/json</td>
+                        <td></td>
+                    </tr>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
 
             </div>
@@ -633,30 +734,38 @@ request.body = JSON.dump({
 response = http.request(request)
 puts response.read_body
 
-    <pre><code class="json">
-
-
-
-
+    
         </code></pre>
-                <h4>QUERY PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Authorization</td>
-                            <td>String</td>
-                            <td>Your Bearer token.</td>
-                        </tr>
+        <h4>QUERY PARAMETERS</h4>
+        <table class="central-overflow-x">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Authorization</td>
+                    <td>String</td>
+                    <td>Your Bearer token.</td>
+                </tr>
+                <tr>
+                    <td>Content-Type</td>
+                    <td>String</td>
+                    <td>application/json</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Accept</td>
+                    <td>String</td>
+                    <td>application/json</td>
+                    <td></td>
+                </tr>
 
-                    </tbody>
-                </table>
+            </tbody>
+        </table>
 
 
             </div>
