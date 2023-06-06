@@ -1,8 +1,8 @@
 <!--
  API Documentation HTML Template  - 1.0.1
- Copyright © 2022 KwachaCredit
+ Copyright © 2022 MACRO-IT
  Licensed under the MIT license.
- https://github.com/chandachewe10/kwacha-credit-Standard-API.git
+ https://github.com/MACRO-IT/BULK-SMS-API.git
  !-->
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -10,8 +10,8 @@
 <head>
     <meta charset="utf-8">
     <title>API - Documentation</title>
-    <meta name="description" content="">
-    <meta name="author" content="ticlekiwi">
+    <meta name="description" content="Bulk SMS - Send customized messages to a large audience quickly and efficiently. Enhance customer engagement, increase brand awareness, and drive conversions">
+    <meta name="author" content="Chanda Chewe">
 
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -52,7 +52,7 @@
         <div class="content-menu">
             <div class="content-infos">
                 <div class="info"><b>Version:</b> 1.0.0</div>
-                <div class="info"><b>Last Updated:</b> 24 Sep, 2022</div>
+                <div class="info"><b>Last Updated:</b> 06 June, 2023</div>
             </div>
             <ul>
                 <li class="scroll-to-link active" data-target="content-get-started">
@@ -99,30 +99,22 @@
                 <pre>
     API Endpoint:
 
-        https://kwachacredit.com/api/api_testing
+        https://macro-sms.net/api/send_message
 
         Body Format: Raw
         {
-            "amount": "....",
-            "currency": "EUR",
-            "externalId": ".....",
-            "payer": {
-              "partyIdType": "MSISDN",
-              "partyId": "......."
-            },
-            "payerMessage": "Paying For Chickens",
-            "payeeNote": "Payment Successfull"
+            "sender_id": "MACRO-IT",
+            "numbers": "0973750029,0769891754",
+            "message": "Good afternoon"
           }
+          
                 </pre>
                 <p>
-                    The kwachacredit API provides programmatic for payments collections from customers. With our APIs,
-                    you can make and receive payments in real world from your clients online. You don't know how to work
-                    with API's? Don't worry we have composed our API's into beautiful <a href="https://github.com/chandachewe10/kwacha-credit-snippets-API.git">HTML standard code snippets</a> in various
-                    languages which you can easily copy and paste in your code and start collecting payments.
+                    Bulk SMS APIs are programming interfaces that allow developers to integrate bulk SMS functionality into their applications or systems. These APIs provide a set of methods and protocols that enable the sending and receiving of SMS messages in large quantities.
                 </p>
                 <p>
-                    To use this in real world, you need a <strong>Bearer Token</strong>. Please create an account with
-                    us and make your token in the developers dashboard.
+                    To use this in real world, you need a <strong>Bearer Token</strong> and a <strong>Sender Id</strong>. Please create an account with
+                    us and make your token and sender Id in the developers dashboard.
                 </p>
             </div>
 
@@ -134,21 +126,16 @@
                 <h2>get characters</h2>
                 <pre><code class="bash">
 # Here is a curl example
-curl --location --request GET 'https://kwachacredit.com/api/api_testing' \
---header 'Content-Type: application/json' 
+curl --location --request GET 'http://127.0.0.1:1212/api/send_message' \
+--header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer ......' \
+--header 'Authorization: Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2' \
 --data-raw '{
-  "amount": "....",
-  "currency": "EUR",
-  "externalId": ".....",
-  "payer": {
-    "partyIdType": "MSISDN",
-    "partyId": "......."
-  },
-  "payerMessage": "Paying For Chickens",
-  "payeeNote": "Payment Successfull"
-}'
+  "sender_id": "MACRO-IT",
+  "numbers": "00973750029,00769891754",
+  "message": "Good afternoon"
+}
+'
                
 
 
@@ -176,7 +163,7 @@ curl --location --request GET 'https://kwachacredit.com/api/api_testing' \
                             <td>Authorization</td>
                             <td>String</td>
                             <td>Your Bearer token.</td>
-                            <td>POST</td>
+                            <td>GET</td>
                         </tr>
                         <tr>
                             <td>Content-Type</td>
@@ -210,33 +197,23 @@ curl --location --request GET 'https://kwachacredit.com/api/api_testing' \
                 <h2>get characters</h2>
                 <pre><code class="bash">
 # Here is a c-sharp-restC# example
-var client = new RestClient("https://kwachacredit.com/api/api_testing");
+var client = new RestClient("https://macro-sms.net/api/send_message");
 client.Timeout = -1;
 var request = new RestRequest(Method.GET);
 request.AddHeader("Content-Type", "application/json");
 request.AddHeader("Accept", "application/json");
-request.AddHeader("Authorization", "Bearer ............");
+request.AddHeader("Authorization", "Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2");
 var body = @"{
 " + "\n" +
-@"  ""amount"": ""....."",
+@"  ""sender_id"": ""MACRO-IT"",
 " + "\n" +
-@"  ""currency"": ""EUR"",
+@"  ""numbers"": ""0973750029,0769891754"",
 " + "\n" +
-@"  ""externalId"": ""......."",
+@"  ""message"": ""Good afternoon""
 " + "\n" +
-@"  ""payer"": {
+@"}
 " + "\n" +
-@"    ""partyIdType"": ""MSISDN"",
-" + "\n" +
-@"    ""partyId"": "".......""
-" + "\n" +
-@"  },
-" + "\n" +
-@"  ""payerMessage"": ""Paying For Chickens"",
-" + "\n" +
-@"  ""payeeNote"": ""Payment Successfull""
-" + "\n" +
-@"}";
+@"";
 request.AddParameter("application/json", body,  ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 Console.WriteLine(response.Content);
@@ -293,18 +270,18 @@ Console.WriteLine(response.Content);
             <div class="overflow-hidden content-section" id="JAVA">
                 <h2>get characters</h2>
                 <pre><code class="bash">
-# Here is a JAVA example
+# Here is a JAVA Http example
 
 OkHttpClient client = new OkHttpClient().newBuilder()
   .build();
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\r\n  \"amount\": \"300\",\r\n  \"currency\": \"EUR\",\r\n  \"externalId\": \"279182\",\r\n  \"payer\": {\r\n    \"partyIdType\": \"MSISDN\",\r\n    \"partyId\": \"9612572923\"\r\n  },\r\n  \"payerMessage\": \"Paying For Chickens\",\r\n  \"payeeNote\": \"Payment Successfull\"\r\n}");
+RequestBody body = RequestBody.create(mediaType, "{\r\n  \"sender_id\": \"MACRO-IT\",\r\n  \"numbers\": \"00973750029,00769891754\",\r\n  \"message\": \"Good afternoon\"\r\n}\r\n");
 Request request = new Request.Builder()
-  .url("https://kwachacredit.com/api/api_testing")
+  .url("http://macro-sms.net/api/send_message")
   .method("GET", body)
   .addHeader("Content-Type", "application/json")
   .addHeader("Accept", "application/json")
-  .addHeader("Authorization", "Bearer ........")
+  .addHeader("Authorization", "Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2")
   .build();
 Response response = client.newCall(request).execute();
         </code></pre>
@@ -367,15 +344,9 @@ Response response = client.newCall(request).execute();
 # Here is a Js example
 // WARNING: For GET requests, body is set to null by browsers.
 var data = JSON.stringify({
-  "amount": "300",
-  "currency": "EUR",
-  "externalId": "279182",
-  "payer": {
-    "partyIdType": "MSISDN",
-    "partyId": "9612572923"
-  },
-  "payerMessage": "Paying For Chickens",
-  "payeeNote": "Payment Successfull"
+  "sender_id": "MACRO-IT",
+  "numbers": "00973750029,00769891754",
+  "message": "Good afternoon"
 });
 
 var xhr = new XMLHttpRequest();
@@ -387,11 +358,10 @@ xhr.addEventListener("readystatechange", function() {
   }
 });
 
-xhr.open("GET", "https://kwachacredit.com/api/api_testing");
+xhr.open("GET", "https://macro-sms.net/api/send_message");
 xhr.setRequestHeader("Content-Type", "application/json");
 xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Authorization", "Bearer ......");
-
+xhr.setRequestHeader("Authorization", "Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2");
 xhr.send(data);
             </code></pre>
 
@@ -454,17 +424,17 @@ xhr.send(data);
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://kwachacredit.com/api/api_testing"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://macro-sms.net/api/send_message"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
   @"Accept": @"application/json",
-  @"Authorization": @"Bearer ......"
+  @"Authorization": @"Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2"
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\r\n  \"amount\": \"300\",\r\n  \"currency\": \"EUR\",\r\n  \"externalId\": \"279182\",\r\n  \"payer\": {\r\n    \"partyIdType\": \"MSISDN\",\r\n    \"partyId\": \"9612572923\"\r\n  },\r\n  \"payerMessage\": \"Paying For Chickens\",\r\n  \"payeeNote\": \"Payment Successfull\"\r\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"{\r\n  \"sender_id\": \"MACRO-IT\",\r\n  \"numbers\": \"00973750029,00769891754\",\r\n  \"message\": \"Good afternoon\"\r\n}\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"GET"];
@@ -494,7 +464,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 
 
-              TERS</h4>
+              </h4>
                 <table class="central-overflow-x">
                     <thead>
                         <tr>
@@ -539,13 +509,13 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
             <div class="overflow-hidden content-section" id="PHP">
                 <h2>get characters</h2>
                 <pre><code class="bash">
-# Here is a PHP example
+# Here is a PHP cURL example
 <?php
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://kwachacredit.com/api/api_testing',
+  CURLOPT_URL => 'https://macro-sms.net/api/send_message',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -554,20 +524,15 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'GET',
   CURLOPT_POSTFIELDS =>'{
-  "amount": "300",
-  "currency": "EUR",
-  "externalId": "279182",
-  "payer": {
-    "partyIdType": "MSISDN",
-    "partyId": "9612572923"
-  },
-  "payerMessage": "Paying For Chickens",
-  "payeeNote": "Payment Successfull"
-}',
+  "sender_id": "MACRO-IT",
+  "numbers": "0973750029,0769891754",
+  "message": "Good afternoon"
+}
+',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json',
     'Accept: application/json',
-    'Authorization: Bearer ......'
+    'Authorization: Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2'
   ),
 ));
 
@@ -575,6 +540,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+
 
             </code></pre>
 
@@ -633,32 +599,25 @@ echo $response;
             <div class="overflow-hidden content-section" id="PYTHON">
                 <h2>get characters</h2>
                 <pre><code class="bash">
-# Here is a PYTHON example
+# Here is a PYTHON Http example
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("localhost")
+conn = http.client.HTTPSConnection("macro-sms.net", )
 payload = json.dumps({
-  "amount": "300",
-  "currency": "EUR",
-  "externalId": "279182",
-  "payer": {
-    "partyIdType": "MSISDN",
-    "partyId": "9612572923"
-  },
-  "payerMessage": "Paying For Chickens",
-  "payeeNote": "Payment Successfull"
+  "sender_id": "MACRO-IT",
+  "numbers": "00973750029,00769891754",
+  "message": "Good afternoon"
 })
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
-  'Authorization': 'Bearer ......'
+  'Authorization': 'Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2'
 }
-conn.request("GET", "/MACROIT/PROJECT1/Hackathon/public/api/testing_api", payload, headers)
+conn.request("GET", "/api/send_message", payload, headers)
 res = conn.getresponse()
 data = res.read()
 print(data.decode("utf-8"))
-      
 
 
             </code></pre>
@@ -712,27 +671,22 @@ require "uri"
 require "json"
 require "net/http"
 
-url = URI("https://kwachacredit.com/api/api_testing")
+url = URI("https://macro-sms.net/api/send_message")
 
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Get.new(url)
 request["Content-Type"] = "application/json"
 request["Accept"] = "application/json"
-request["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NzU3MjE3NC1hNjkzLTRkNTItODdjZC0wMzNkMzA2M2UwYWQiLCJqdGkiOiIwOWJjMzhmZmZiMjRkMTIyYWZjMzY5MmRjNjMyZmJiZjgwZTdhMTYxMDJjNmIzZDFhZmQ5NTVmNjVkMTQyNWNlMmVhYjdkOWRhMDQ5OTgzZSIsImlhdCI6MTY2NDAwNTgzNS41NDE1MDUsIm5iZiI6MTY2NDAwNTgzNS41NDE1MjYsImV4cCI6MTY5NTU0MTgzNC45NjMwNjMsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.oqrzwCeUGnubkOx--gJMjsMMcluYmO59zCc8vF52JBJD7lVgzEBZdrzHBsDI2inDSnzpSiXUiN7EUg80Cmw8rgQLYBLOT_9FWkc8T6On2XzZ7-TbRiMvyySR2GlXGuCowAnbb-FiJBQRdk1nVrHmDuZMJDLEbOdOfHxJfzbP1pCS3AopJsBff28epXMBmBT2SfYjMIf12i85recDE2isW_CGKzoI8HHQDEnnHlynKqHf2ahwGqNlIij6LVs5ulyAiT477G9871Te3o4Rm8tNpcTZz-xJ5TWdNOBJs_ItTY8fcxQom97zUPbRAevTaylyvPkR0dTIcbxlTsyoKrey14sCHs0E_PDly5yk5qL9AtTt1NDX7TPtT4nXXGbSz7t8GIZueHKUvq_BGa1IuiPze9a6aDLenhhgnQeciwq-8ltClBskC-PE2KcYAewXmO4fbR_mUqjSinNDnobqRHhVnEfnIx3CHnWD28DA1IuE1AJa_M7FK81d3-XYIr99e6Bv5W4gV-1-xvq2RntohPDWWUeZVW7-pPMlxmEFTSRa06nEXZ_pnL3MJCHUohB858b-CEpyFdERS5ivIFzZq659y6cnf7_Wxlw3eVAumfRORyzZfX5ISrP8BuxXnxjNZzIaP6fSAxtRsZfigYofSWTOhhbQVAsGFP2CITE8wKr66C4"
+request["Authorization"] = "Bearer PWoKyVBMIRh8wfQR2eCw8TOZ2MNmzCd7h9ikOSX2"
 request.body = JSON.dump({
-  "amount": "300",
-  "currency": "EUR",
-  "externalId": "279182",
-  "payer": {
-    "partyIdType": "MSISDN",
-    "partyId": "9612572923"
-  },
-  "payerMessage": "Paying For Chickens",
-  "payeeNote": "Payment Successfull"
+  "sender_id": "MACRO-IT",
+  "numbers": "0973750029,0769891754",
+  "message": "Good afternoon"
 })
 
 response = http.request(request)
 puts response.read_body
+
 
     
         </code></pre>
@@ -779,7 +733,7 @@ puts response.read_body
 <div class="overflow-hidden content-section" id="SUCCESS">
     <h2>Success</h2>
     <p>
-        The kwachacredit API uses the following success status codes:
+        The Macro-SMS API uses the following success status codes:
     </p>
     <table>
         <thead>
@@ -790,18 +744,12 @@ puts response.read_body
         </thead>
         <tbody>
             <tr>
-                <td>200</td>
-                <td>
-                    Ok. Request send successfully
-                </td>
-            </tr>
-            <tr>
                 <td>202</td>
                 <td>
-                    Accepted. Request Accepted successfully 
+                    Accepted. Request Accepted For Delivery
                 </td>
             </tr>
-           
+            
 
         </tbody>
     </table>
@@ -819,7 +767,7 @@ puts response.read_body
             <div class="overflow-hidden content-section" id="content-errors">
                 <h2>Errors</h2>
                 <p>
-                    The kwachacredit API uses the following error codes:
+                    The MACRO-SMS API uses the following error codes:
                 </p>
                 <table>
                     <thead>
@@ -830,15 +778,15 @@ puts response.read_body
                     </thead>
                     <tbody>
                         <tr>
-                            <td>400</td>
+                            <td>401</td>
                             <td>
-                                Bad Request
+                                Unauthenticated
                             </td>
                         </tr>
                         <tr>
-                            <td>404</td>
+                            <td>422</td>
                             <td>
-                                Not Found
+                                Unprocessable entity
                             </td>
                         </tr>
                         <tr>
@@ -855,7 +803,7 @@ puts response.read_body
         <div class="content-code"></div>
     </div>
     <!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
-    <a href="https://github.com/chandachewe10/kwacha-credit-Standard-API.git" class="github-corner"
+    <a href="https://github.com/MACRO-IT/BULK-SMS-API.git" class="github-corner"
         aria-label="View source on Github" title="Contribute on Github"><svg width="80" height="80"
             viewBox="0 0 250 250"
             style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;"
